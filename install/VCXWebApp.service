@@ -1,0 +1,15 @@
+[Unit]
+Description=VCXWebApp
+
+[Service]
+ExecStart=/vagrant/server/vcx-server.js
+Restart=always
+User=vagrant
+# Note Debian/Ubuntu uses 'nogroup', RHEL/Fedora uses 'nobody'
+Group=nogroup
+Environment=PATH=/usr/bin:/usr/local/bin
+Environment=NODE_ENV=production
+WorkingDirectory=/vagrant/server/
+
+[Install]
+WantedBy=multi-user.target

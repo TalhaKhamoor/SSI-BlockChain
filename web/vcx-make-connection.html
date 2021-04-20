@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Swarming 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131201
+Arranged by: Hyangwon (Melissa) Lee
+-->
+
+<!--
+Original Page Template  : vcx-cred-connection.html (from Evernym's Verity UI customer-toolkit)
+Initial Code by         : Naghmeh Dadgar-Azad (2020.07.01)
+Description             : This is 'CONNECTIONS' page. During the system design phase, the group studied
+                          tutorials and the mockup program provided by Evernym through Evernym Customer Portal.
+                          As a result, the group previously included multiple functionalities under 'manage 
+                          connections' page such as accepting/denying connection requests or removing existing 
+                          connections. A page called 'connection.html' (Initial Code by Hyagnwon Lee) was created
+                          and 'vcx-make-connection.html' was considered as one of the subpages of 'manage connect
+                          -ion' page. However, upon studying the actual codes (provided by Evernmy on 2020.05.18) 
+                          and consulting the developer at Evernym who developed the Verity UI, the group concluded  
+                          that accept/deny/remove functionalities for connections cannot be carried out using the 
+                          current Verity UI server-side codes or the mobile application (Connect.Me). To avoid scope
+                          creep, the group decided to completely withdraw accept/deny/remove functions and only to
+                          provide the 'create connection' function to the users. 
+
+                          The previously created 'connection.html' has been removed from the project and the group
+                          is utilizing the original version 'vcx-make-connection.html' provided by Evernym.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Make Connection</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="vcx-client.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="logo">
+      <h1>
+        <a href="#" class="image image-logo"
+          ><img src="images/logo-blue.png" alt=""
+        /></a>
+      </h1>
+    </div>
+    <!-- Top Menu Bar -->
+    <div id="header">
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+          <li class="current_page_item">
+            <a href="vcx-make-connection.html" accesskey="1" title=""
+              >Connections</a
+            >
+          </li>
+          <li>
+            <a href="transcripts.html" accesskey="2" title="">Transcripts</a>
+          </li>
+          <li>
+            <a href="verifications.html" accesskey="3" title=""
+              >Verifications</a
+            >
+          </li>
+          <li>
+            <a href="ourProject.html" accesskey="4" title="">Our Project</a>
+          </li>
+          <li><a href="login.html" accesskey="5" title="">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="featured-wrapper">
+      <div id="featured" class="container">
+        <div class="major" align="center">
+          <h1>Create Connection</h1>
+          <br />
+          <div id="loader" class="loader"></div>
+          <br />
+          <div id="imgdiv">
+            <img id="qr" align="middle" />
+          </div>
+          <br />
+          <label>Enter Student Name: </label>&nbsp;&nbsp;
+          <input class="text_input" type="text" id="connection_name" />
+          <br /><br />
+          <button class="button" onclick="make_connection()">
+            Click for Connection Request QR
+          </button>
+          <br /><br />
+          <div id="message-text"></div>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div id="copyright" class="container">
+      <p>
+        &copy; SSI Capstone Group. All rights reserved. | Photos from
+        <a href="https://unsplash.com/">Unsplash</a> | Design by
+        <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+      </p>
+    </div>
+  </body>
+</html>

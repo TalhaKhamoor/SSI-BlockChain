@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Apr 10, 2020, 9:43:49 PM
+    Author     : Ben Talbot
+    Additional Code: Ash Scott from Codepen
+*/
+.qrmodal-container {
+  padding: 30px;
+  max-width: 550px;
+  width: 100% !important;
+  background-color: #F7F7F7;
+  margin: 0 auto;
+  margin-top: 10%;
+  border-radius: 2px;
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  z-index: 1;
+  font-family: 'Source Sans Pro', sans-serif;
+  
+}
+
+.qrmodal-container h1 {
+  text-align: center;
+  font-size: 1.8em;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.qrmodal-container img {
+  text-align: center;
+  display: inline-block;
+} 
+
+.qrmodal-container #button {
+    display: inline-block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1em 3em 1em 3em;
+    background: #2A70E8;
+    border-radius: 8px;
+    letter-spacing: 0.20em;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 0.90em;
+    color: #FFF;
+} 
+
+.animate-top {
+    position:relative;
+    animation:animatetop 0.4s
+    }
+    @keyframes animatetop{
+        from{top:-300px;opacity:0} to{top:0;opacity:1}
+}
+

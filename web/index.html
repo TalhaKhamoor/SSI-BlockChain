@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Swarming 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131201
+Arranged by: Hyangwon (Melissa) Lee
+-->
+
+<!--
+Original Page Template  : index.bak.html (from Evernym's Verity UI customer-toolkit)
+Initial Code by         : Benjamin Talbot (2020.06.14)
+Description             : This is the main page of the project's web application. When an end-user 
+                          successfully logs in to the web application, the user will be redirected 
+                          to this page. A menu bar is located at the top to provide sense of navigation 
+                          to the users. Under the top menu bar, four different boxes are located to 
+                          provide end-users another way to access subpages of the system. Each box 
+                          consists of an image, a description label, and a clickable button. For the 
+                          future implementations, the images, descriptions, and the button names can be 
+                          modified to help users remember different functions more easily or to deliver 
+                          more detailed meanings. 
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SSI Portal</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="vcx-client.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="logo">
+      <h1>
+        <a href="#" class="image image-logo"
+          ><img src="images/logo-blue.png" alt=""
+        /></a>
+      </h1>
+    </div>
+    <div id="header">
+      <!-- Top Menu Bar -->
+      <div id="menu" class="container">
+        <ul>
+          <li class="current_page_item">
+            <a href="index.html" accesskey="1" title="">Homepage</a>
+          </li>
+          <li>
+            <a href="vcx-make-connection.html" accesskey="1" title=""
+              >Connections</a
+            >
+          </li>
+          <li>
+            <a href="transcripts.html" accesskey="2" title="">Transcripts</a>
+          </li>
+          <li>
+            <a href="verifications.html" accesskey="3" title=""
+              >Verifications</a
+            >
+          </li>
+          <li>
+            <a href="ourProject.html" accesskey="4" title="">Our Project</a>
+          </li>
+          <li><a href="login.html" accesskey="5" title="">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="custom-wrapper">
+      <div id="custom" class="container">
+        <div class="major">
+          <h2>SSI Portal</h2>
+          <span class="byline">Welcome to the SSI Portal</span>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#" class="image image-full"
+            ><img src="images/pic01.jpg" height="150" alt=""
+          /></a>
+          <!-- Button Boxes -->
+          <div class="box">
+            <p>Manage Connections</p>
+            <a href="vcx-make-connection.html" class="button"
+              >Manage Connections</a
+            >
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#" class="image image-full"
+            ><img src="images/pic02.jpg" height="150" alt=""
+          /></a>
+          <div class="box">
+            <p>Manage Transcripts</p>
+            <a href="transcripts.html" class="button">Manage Transcripts</a>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#" class="image image-full"
+            ><img src="images/pic03.jpg" height="150" alt=""
+          /></a>
+          <div class="box">
+            <p>Verify Transcripts</p>
+            <a href="verifications.html" class="button">Verify Transcripts</a>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <a href="#" class="image image-full"
+            ><img src="images/pic04.jpg" height="150" alt=""
+          /></a>
+          <div class="box">
+            <p>About our Capstone</p>
+            <a href="ourProject.html" class="button">About our Capstone</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="copyright" class="container">
+      <p>
+        &copy; SSI Capstone Group. All rights reserved. | Photos from
+        <a href="https://unsplash.com/">Unsplash</a> | Design by
+        <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+      </p>
+    </div>
+  </body>
+</html>

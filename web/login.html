@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<!--
+Original Page Template  : -
+Initial Code by         : Benjamin Talbot (2020.06.22)
+Description             : This is the login page of the project's web applicaiton. Evernym's Verity UI
+                          originally does not contain any login functionalities. However, while defining
+                          the objectives of the project, the group decided that the login functionalities
+                          should be implemented in order to tighten the security of the web application
+                          and ensure that only valid SAIT Office of Registrar staffs can access the 
+                          system. In order to test the login functionality, username "Admin" and password
+                          "password" can be used. To view valid login credentials or to modify them, please
+                          check the validateLogin() function of "vcx-client.js" JavaScript file.
+-->
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+    <title>SSI Portal</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800"
+      rel="stylesheet"
+    />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css" />
+    <link rel="stylesheet" href="css/fontAwesome.css" />
+    <link rel="stylesheet" href="css/tooplate-style.css" />
+    <link rel="stylesheet" href="css/modals.css" />
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="vcx-client.js"></script>
+  </head>
+  <body>
+    <section class="first-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="text-content">
+              <h2>Welcome To SSI Portal</h2>
+              <div class="row">
+                <!-- Login Form -->
+                <form id="login" method="GET">
+                  <div class="col-md-10"></div>
+                  <div class="col-md-2">
+                    <fieldset>
+                      <input
+                        name="name"
+                        type="text"
+                        class="form-control"
+                        id="username"
+                        placeholder="Username"
+                        required
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-10"></div>
+                  <div class="col-md-2">
+                    <fieldset>
+                      <input
+                        name="password"
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        placeholder="Password"
+                        required
+                      />
+                    </fieldset>
+                  </div>
+                  <div class="col-md-12">
+                    <fieldset>
+                      <button
+                        type="submit"
+                        id="form-submit"
+                        class="btn"
+                        onclick="validateLogin()"
+                      >
+                        Log In
+                      </button>
+                    </fieldset>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="second-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 col-sm-6">
+            <!-- Member and Project Introduction - the same content cam be found under the "OUR PROJECT" page -->
+            <div class="service-item">
+              <div class="icon">
+                <img src="img/first-icon.png" alt="" />
+              </div>
+              <h4>Hyun Ji (Clara) Lee</h4>
+              <p>hyunji.lee@edu.sait.ca</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="service-item">
+              <div class="icon">
+                <img src="img/second-icon.png" alt="" />
+              </div>
+              <h4>Naghmeh Dadgar-Azad</h4>
+              <p>naghmeh.dadgar-azad@edu.sait.ca</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="service-item">
+              <div class="icon">
+                <img src="img/third-icon.png" alt="" />
+              </div>
+              <h4>Ben Talbot</h4>
+              <p>benjamin.talbot@edu.sait.ca</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="service-item">
+              <div class="icon">
+                <img src="img/fourth-icon.png" alt="" />
+              </div>
+              <h4>Syed Talha Khamoor</h4>
+              <p>syed.khamoor@edu.sait.ca</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="service-item">
+              <div class="icon">
+                <img src="img/fifth-icon.png" alt="" />
+              </div>
+              <h4>Melissa Lee</h4>
+              <p>hyangwon.lee@edu.sait.ca</p>
+            </div>
+          </div>
+          <div class="col-md-4 col-sm-6">
+            <div class="service-item">
+              <div class="icon">
+                <img src="img/sixth-icon.png" alt="" />
+              </div>
+              <h4>Robert Leishman</h4>
+              <p>robert.leishman@edu.sait.ca</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="third-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="left-image col-md-4">
+              <img src="img/left-image.png" alt="" />
+            </div>
+            <div class="right-text col-md-8">
+              <h4><em>Our Capstone</em><br />You and your credentials</h4>
+              <p>
+                The internet as we know it has a crisis with identity, and this
+                crisis begins and ends with the relationship between you and
+                your credentials. Credentials, simply put, are pieces of
+                information that identify you as an individual in our society.
+                Items such as your passport, driver’s license, and birth
+                certificates are all considered credentials, because they
+                provide proof that you are who you say you are.
+              </p>
+              <p>
+                Before the internet, credentials almost exclusively existed as
+                paper entities. Paper credentials work well, as they are easily
+                verifiable. When you go to the bar and hand the server your
+                driver’s license, they’re placing their trust into the
+                provincial government that your credential is valid and that you
+                are who you claim you are.
+              </p>
+              <p>
+                Herein lies the problem, paper credentials don’t translate well
+                online. Credentials require trust, but the internet evolved
+                without authorities that could be trusted reliably. This issue
+                is monumental today because digital identity is the cornerstone
+                of every online interaction.
+              </p>
+              <p>
+                Blockchain technology can provide a possible solution regarding
+                the issue of trust. Blockchains are secure, public, and
+                decentralized. Online credentials can be reliably verified using
+                the Blockchain, similar to the process of verifying paper
+                credentials
+              </p>
+              <p>
+                Our project seeks to apply one potential application of
+                Blockchain technology. We plan to create a service that will
+                provide students and Certificate Authorities with transcripts
+                that are digitally signed and verified through the Blockchain.
+                With this service, authorized individuals with be able to access
+                sensitive transcript information more easily, and securely.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <ul>
+              <li>
+                <a href="#"><i class="fa fa-facebook"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-twitter"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-linkedin"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-rss"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="fa fa-dribbble"></i></a>
+              </li>
+            </ul>
+            <p>&copy; 2020 SSI Capstone Project</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div
+      class="modal"
+      id="register-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="myModalLabel"
+      aria-hidden="true"
+      style="display: none;"
+    >
+      <div class="modal-dialog-centered">
+        <div class="loginmodal-container">
+          <h1>
+            Register<a
+              href="#"
+              class="close"
+              data-dismiss="modal"
+              aria-label="close"
+              >&times;</a
+            >
+          </h1>
+          <br />
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

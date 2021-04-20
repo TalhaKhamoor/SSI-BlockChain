@@ -1,0 +1,189 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Swarming 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131201
+Arranged by: Hyangwon (Melissa) Lee
+-->
+
+<!--
+Original Page Template  : -
+Initial Code by         : Syend Talha Khamoor (2020.06.14)
+Modified by             : Naghmeh Dadgar-Azad () - Retouch overall look&feel
+Description             : This is the 'OUR PROJECT' page. The original customer-toolkit codes provided
+                          by Evernym did not contain this page. However, the group decided to include
+                          detailed information on Self-Sovereign Identity, explanations of the objectives
+                          of the project, and the information of team members. The same information can
+                          be found under the login page of the project. 
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>SSI Portal</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="vcx-client.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <div id="logo">
+      <h1>
+        <a href="#" class="image image-logo"
+          ><img src="images/logo-blue.png" alt=""
+        /></a>
+      </h1>
+    </div>
+    <!-- Top Menu Bar -->
+    <div id="header">
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+          <li>
+            <a href="vcx-make-connection.html" accesskey="1" title="">Connections</a>
+          </li>
+          <li>
+            <a href="transcripts.html" accesskey="2" title="">Transcripts</a>
+          </li>
+          <li>
+            <a href="verifications.html" accesskey="3" title=""
+              >Verifications</a
+            >
+          </li>
+          <li class="current_page_item">
+            <a href="#" accesskey="4" title="">Our Project</a>
+          </li>
+          <li><a href="login.html" accesskey="5" title="">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="custom-wrapper">
+      <div id="custom" class="container">
+        <div class="major">
+          <h2>You and your credentials</h2>
+          <div class="col-md-1"></div>
+          <!-- About Self-Sovereign Identity and Objectives of Project -->
+          <div
+            id="contents"
+            class="contents col-md-10"
+            style="text-align: left;"
+          >
+            <br />
+            The internet as we know it has a crisis with identity, and this
+            crisis begins and ends with the relationship between you and your
+            credentials. Credentials, simply put, are pieces of information that
+            identify you as an individual in our society. Items such as your
+            passport, driver’s license, and birth certificates are all
+            considered credentials, because they provide proof that you are who
+            you say you are.
+            <br />
+            <br />
+            Before the internet, credentials almost exclusively existed as paper
+            entities. Paper credentials work well, as they are easily
+            verifiable. When you go to the bar and hand the server your driver’s
+            license, they’re placing their trust into the provincial government
+            that your credential is valid and that you are who you claim you
+            are.
+            <br />
+            <br />
+            Herein lies the problem, paper credentials don’t translate well
+            online. Credentials require trust, but the internet evolved without
+            authorities that could be trusted reliably. This issue is monumental
+            today because digital identity is the cornerstone of every online
+            interaction.
+            <br />
+            <br />
+            Blockchain technology can provide a possible solution regarding the
+            issue of trust. Blockchains are secure, public, and decentralized.
+            Online credentials can be reliably verified using the Blockchain,
+            similar to the process of verifying paper credentials.
+            <br />
+            <br />
+            Our project seeks to apply one potential application of Blockchain
+            technology. We plan to create a service that will provide students
+            and Certificate Authorities with transcripts that are digitally
+            signed and verified through the Blockchain. With this service,
+            authorized individuals with be able to access sensitive transcript
+            information more easily, and securely.
+          </div>
+          <div class="col-md-1"></div>
+        </div>
+        <!-- About Team Members -->
+        <div class="col-md-4" style="margin-bottom: 50px;">
+          <div class="box2">
+            <a href="#" class="image"
+              ><img src="images/first-icon.png" alt=""
+            /></a>
+            <h4>Hyun Ji (Clara) Lee</h4>
+            <p>hyunji.lee@edu.sait.ca</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 50px;">
+          <div class="box2">
+            <a href="#" class="image"
+              ><img src="images/second-icon.png" alt=""
+            /></a>
+            <h4>Naghmeh Dadgar-Azad</h4>
+            <p>naghmeh.dadgar-azad@edu.sait.ca</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 50px;">
+          <div class="box2">
+            <a href="#" class="image"
+              ><img src="images/third-icon.png" alt=""
+            /></a>
+            <h4>Ben Talbot</h4>
+            <p>benjamin.talbot@edu.sait.ca</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 50px;">
+          <div class="box2">
+            <a href="#" class="image"
+              ><img src="images/fourth-icon.png" alt=""
+            /></a>
+            <h4>Syed Talha Khamoor</h4>
+            <p>syed.khamoor@edu.sait.ca</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 50px;">
+          <div class="box2">
+            <a href="#" class="image"
+              ><img src="images/fifth-icon.png" alt=""
+            /></a>
+            <h4>Melissa Lee</h4>
+            <p>hyangwon.lee@edu.sait.ca</p>
+          </div>
+        </div>
+        <div class="col-md-4" style="margin-bottom: 50px;">
+          <div class="box2">
+            <a href="#" class="image"
+              ><img src="images/sixth-icon.png" alt=""
+            /></a>
+            <h4>Robert Leishman</h4>
+            <p>robert.leishman@edu.sait.ca</p>
+          </div>
+        </div>
+      </div>
+      <div class="custom-background"></div>
+    </div>
+    <div id="copyright" class="container">
+      <p>
+        &copy; SSI Capstone Group. All rights reserved. | Photos from
+        <a href="https://unsplash.com/">Unsplash</a> | Design by
+        <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+      </p>
+    </div>
+  </body>
+</html>

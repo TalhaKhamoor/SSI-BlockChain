@@ -1,0 +1,165 @@
+
+
+# Default server configuration
+
+# upstream load balancing 
+upstream my_http_servers {
+    server 127.0.0.1:444;      # httpServer1 listens to port 444
+    server 127.0.0.1:445;      # httpServer2 listens to port 445
+    server 127.0.0.1:446;      # httpServer3 listens to port 446
+    server 127.0.0.1:447;      # httpServer4 listens to port 447
+}
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    root /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    server_name _;
+    location ~ ^/(.*$) {
+        try_files $uri /index.html;
+    }
+
+# Location for upstream
+  location / {
+        proxy_set_header   X-Real-IP $remote_addr;
+        proxy_set_header   Host      $http_host;
+        proxy_pass         http://my_http_servers;
+  }
+location /api/socket.io {
+    satisfy any;
+    add_header "Strict-Transport-Security" "max-age=31536000";
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_http_version    1.1;
+    proxy_set_body        "";
+    proxy_set_header      Upgrade $http_upgrade;
+    proxy_set_header      Connection "upgrade";
+    proxy_set_header      X-Original-URL $request_uri;
+    proxy_set_header      Host $host;
+  }
+    location /api/v1/file_list {
+    satisfy any;
+    add_header "Strict-Transport-Security" "max-age=31536000";
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_http_version    1.1;
+    proxy_set_body        "";
+    proxy_set_header      Upgrade $http_upgrade;
+    proxy_set_header      Connection "upgrade";
+    proxy_set_header      X-Original-URL $request_uri;
+    proxy_set_header      Host $host;
+  }
+    location /api/v1/store_connection {
+    satisfy any;
+    add_header "Strict-Transport-Security" "max-age=31536000";
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_http_version    1.1;
+    proxy_set_body        "";
+    proxy_set_header      Upgrade $http_upgrade;
+    proxy_set_header      Connection "upgrade";
+    proxy_set_header      X-Original-URL $request_uri;
+    proxy_set_header      Host $host;
+  }
+  location /api/v1/ask_question {
+    satisfy any;
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Real-IP $remote_addr;
+    proxy_set_header      X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header      Proxy "";
+  }
+  location /api/v1/ask_question_from_saved_connection {
+    satisfy any;
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Real-IP $remote_addr;
+    proxy_set_header      X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header      Proxy "";
+  }
+  location /api/v1/offer_credential {
+    satisfy any;
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Real-IP $remote_addr;
+    proxy_set_header      X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header      Proxy "";
+  }
+  location /api/v1/proof_credential {
+    satisfy any;
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Real-IP $remote_addr;
+    proxy_set_header      X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header      Proxy "";
+  }
+    location /api/v1/build_credential {
+    satisfy any;
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Real-IP $remote_addr;
+    proxy_set_header      X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header      Proxy "";
+  }
+    location /api/v1/make_credential {
+    satisfy any;
+    add_header "X-Frame-Options" "SAMEORIGIN";
+    proxy_pass            http://localhost:5050;
+    proxy_read_timeout    90s;
+    proxy_connect_timeout 90s;
+    proxy_send_timeout    90s;
+    proxy_set_header      Host $host;
+    proxy_set_header      X-Real-IP $remote_addr;
+    proxy_set_header      X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_set_header      Proxy "";
+  }
+}
+
+# Virtual Host configuration for example.com
+#
+# You can move that to a different file under sites-available/ and symlink that
+# to sites-enabled/ to enable it.
+#
+#server {
+#	listen 80;
+#	listen [::]:80;
+#
+#	server_name example.com;
+#
+#	root /var/www/example.com;
+#	index index.html;
+#
+#	location / {
+#		try_files0/ =404;
+#	}
+#}

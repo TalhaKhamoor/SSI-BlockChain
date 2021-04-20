@@ -1,0 +1,132 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!--
+Design by TEMPLATED
+http://templated.co
+Released for free under the Creative Commons Attribution License
+
+Name       : Swarming 
+Description: A two-column, fixed-width design with dark color scheme.
+Version    : 1.0
+Released   : 20131201
+Arranged by: Hyangwon (Melissa) Lee
+-->
+
+<!--
+Original Page Template  : vcx-cred-exchange.html (from Evernym's Verity UI customer-toolkit)
+Initial Code by         : Naghmeh Dadgar-Azad (2020.06.14)
+Modified by             : Benjamin Talbot (2020.07.12) - Removed subpage buttons
+                                                       - Added pop-up for verifications
+                          Hyun Ji Lee (2020.07.15) - Pop-up removed
+                                                   - Function call fixed
+Description             : This is the 'VERIFICATIONS' page. Originally this page was called 'Credential
+                          Exchange' in Evernym's Verity UI. However, during the system design phase, the
+                          group decided to specifically use the term 'transcript' instead of 'credentials'.
+                          Also, the term 'exchange' was not accurately refelcting the operation of verifying
+                          the student transcripts. Therefore, the group decided to change the page name 
+                          and call it 'VERIFICATIONS' instead.
+
+                          When the end-user successfuly created student transcript and also successfuly
+                          sent the transcript over to the student's Connect.Me mobile application, the 
+                          verifications can be carried out either by SAIT Office of Registrar or another
+                          certificate authority.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Proof Request</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link
+      href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900"
+      rel="stylesheet"
+    />
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/bootstrap-theme.min.css" rel="stylesheet" type="text/css" />
+    <link href="css/default.css" rel="stylesheet" type="text/css" media="all" />
+    <link href="css/fonts.css" rel="stylesheet" type="text/css" media="all" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.slim.js"></script>
+    <script src="vcx-client.js" charset="utf-8"></script>
+
+    <script>
+      document.onreadystatechange = function () {
+        if (document.readyState === "complete") {
+          console.log("Loaded Document");
+          init();
+        }
+      };
+    </script>
+  </head>
+
+  <body>
+    <div id="logo">
+      <h1>
+        <a href="#" class="image image-logo"
+          ><img src="images/logo-blue.png" alt=""
+        /></a>
+      </h1>
+    </div>
+    <!-- Top Menu Bar -->
+    <div id="header">
+      <div id="menu" class="container">
+        <ul>
+          <li><a href="index.html" accesskey="1" title="">Homepage</a></li>
+          <li>
+            <a href="vcx-make-connection.html" accesskey="1" title=""
+              >Connections</a
+            >
+          </li>
+          <li>
+            <a href="transcripts.html" accesskey="2" title="">Transcripts</a>
+          </li>
+          <li class="current_page_item">
+            <a href="verifications.html" accesskey="3" title=""
+              >Verifications</a
+            >
+          </li>
+          <li>
+            <a href="ourProject.html" accesskey="4" title="">Our Project</a>
+          </li>
+          <li><a href="login.html" accesskey="5" title="">Logout</a></li>
+        </ul>
+      </div>
+    </div>
+    <div id="custom-wrapper">
+      <div id="custom" class="container">
+        <div class="major">
+          <h2>Verify Documents</h2>
+        </div>
+        <div class="major" align="center">
+          <br />
+          <div class="selection">
+            <label>Select Transcript to Verify &nbsp;</label>
+            <br />
+            <select
+              style="align-content: center; font-size: 20px;"
+              id="proof_cred"
+            >
+            </select>
+          </div>
+          <br />
+          <div id="imgdiv">
+            <img id="qr" align="middle" />
+          </div>
+          <br />
+          <button class="button" onclick="validate_proof()">
+            Verify Transcript Through QR
+          </button>
+          <br /><br />
+          <div id="message-text"></div>
+          <br />
+        </div>
+        <div class="col-md-4 col-sm-6"></div>
+      </div>
+    </div>
+    <div id="copyright" class="container">
+      <p>
+        &copy; SSI Capstone Group. All rights reserved. | Photos from
+        <a href="https://unsplash.com/">Unsplash</a> | Design by
+        <a href="http://templated.co" rel="nofollow">TEMPLATED</a>.
+      </p>
+    </div>
+  </body>
+</html>

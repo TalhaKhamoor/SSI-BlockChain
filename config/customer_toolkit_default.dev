@@ -1,0 +1,17 @@
+DEBUG=1
+VCX_CONFIG_PATH=/root/config/vcx-config.json
+### Use "testing", "persistent", or "production" here for levels of permanence. "testing" regenerates seeds, DIDs, configs, and builds new credentials each time, using the staging net. "persistent" will use the staging net, but persist the ENTERPRISE_SEED and re-use it to install. "production" uses the Production Network and will require manual entry of an enterprise seed from a pre-registered DID, or require a new install to register the DID on the Production Network.
+DEPLOYMENT_TYPE=testing
+#These are deployment specific bits that affect how VCX will be provisioned
+GEN_TXN_PATH=/root/config/genesis.txn
+AGENCY_URL=https://eas01.pps.evernym.com
+INSTITUTION_NAME=Customer Toolkit
+INSTITUTION_LOGO=https://s3.us-east-2.amazonaws.com/static.evernym.com/images/icons/cropped-Evernym_favicon-trans-192x192.png
+#ENTERPRISE_SEED=dae0mu8Gie8AeteeT5Zah3wu2phoo6ce 
+ENTERPRISE_SEED=
+GENESIS_FILE_URL="https://raw.githubusercontent.com/sovrin-foundation/sovrin/stable/sovrin/pool_transactions_sandbox_genesis"
+WALLET_NAME=LIBVCX_SDK_WALLET
+WALLET_KEY=12345
+## Uncomment this to allow the 'app' to not fail even if django or nginx fail to start.
+## Only for debugging
+#IGNORE_PROCESS_ERRORS=true
