@@ -1,6 +1,6 @@
 /*
 Original Code From      : vcx-client.js (Evernym's Verity UI customer-toolkit)
-Studied and Modified by : Hyun Ji (Clara) Lee
+Studied and Modified by : Hyun Ji (Clara) Lee and Talha Khamoor
 Description             : This is vcx-client.js, a client-side JavaScript code. 
                           All the HTML files are integrated with this code and
                           these HTML files call functions from vcx-client.js
