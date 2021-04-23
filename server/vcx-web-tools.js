@@ -2,7 +2,7 @@
 
 /*
 Original Code From      : vcx-web-tools.js (Evernym's Verity UI customer-toolkit)
-Studied and Modified by : Hyun Ji (Clara) Lee
+Studied and Modified by : Hyun Ji (Clara) Lee and Talha Khamoor
 Description             : This is vcx-web-tools.js, a server-side JavaScript code. 
                           The functions of vcx-web-tools.js are called from another
                           server-side code, vcx-server.js. 
