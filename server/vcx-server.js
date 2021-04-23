@@ -2,7 +2,7 @@
 
 /*
 Original Code From      : vcx-server.js (Evernym's Verity UI customer-toolkit)
-Studied and Modified by : Hyun Ji (Clara) Lee
+Studied and Modified by : Hyun Ji (Clara) Lee and Talha Khamoor
 Description             : This is vcx-server.js, a server-side JavaScript code. 
                           vcx-client.js sends requests over to vcx-server.js 
                           using XMLHttpRequest objects. vcx-server.js receives
