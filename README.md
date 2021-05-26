@@ -1,6 +1,9 @@
-\*\* Author: Robert Leishman \*\*
 
-# SSI Web Application Installation Procedure
+# SSI Web Application 
+
+This system was built as a proof of concept that highlights the use of Evernym provided source code called “customer-toolkit”. In a more general sense, it promotes self-sovereign identity under the Sovrin Network. It utilizes Immutable Decentralized Identifiers (DID’s) on a  Blockchain via the Web Application that the SSI Capstone group has created. Particularly, this web application deals with using those DID’s to create connections between a Certificate  Authority (SAIT Registrar or ABC University) and prospective Students. By forming these connections between the SSI’s web application and the Evernym provided cell phone app, users can transfer verifiable credentials.  The purpose of this system is to provide an easy, secure, and verifiable way for students to access their academic transcripts. The system provides students with a digital copy of their transcript, which is kept in a secure “digital wallet” on their phone.
+
+// Installation
 
 To install the SSI Web Application, VirtualBox and Vagrant must be installed first. The following instructions cover installation on a Windows environment. Begin with installing VirtualBox.
 
